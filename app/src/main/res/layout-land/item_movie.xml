@@ -24,6 +24,7 @@
         android:layout_marginTop="1dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:textSize="24sp"
+        android:textColor="@color/white"
         tools:text="Demon Slayer: Infinity Train" />
 
     <TextView
@@ -34,6 +35,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="1dp"
         android:layout_toEndOf="@+id/ivPoster"
+        android:textColor="@color/white"
         tools:text="Tanjirō Kamado, joined with Inosuke Hashibira, a boy raised by boars who wears a boar's head, and Zenitsu Agatsuma, a scared boy who reveals his true power when he sleeps, boards the Infinity Train on a new mission with the Fire Hashira, Kyōjurō Rengoku, to defeat a demon who has been tormenting the people and killing the demon slayers who oppose it!" />
 
 </RelativeLayout>
