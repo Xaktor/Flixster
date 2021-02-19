@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     Log.e(TAG,"Hit json execption",e);
                     e.printStackTrace();
+
                 }
             }
 

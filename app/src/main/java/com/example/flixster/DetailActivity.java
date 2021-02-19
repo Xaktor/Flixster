@@ -30,6 +30,8 @@ public class DetailActivity extends YouTubeBaseActivity {
     TextView tvOverview;
     RatingBar ratingBar;
     YouTubePlayerView youTubePlayerView;
+    double rating;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class DetailActivity extends YouTubeBaseActivity {
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
         ratingBar.setRating((float)movie.getRating());
+        rating=movie.getRating();
 
         AsyncHttpClient client=new AsyncHttpClient();
         client.get(String.format(VIDEOS_URL, movie.getMovieId()), new JsonHttpResponseHandler() {
@@ -70,9 +73,6 @@ public class DetailActivity extends YouTubeBaseActivity {
 
             }
         });
-
-
-
     }
 
     private void initializeYoutube(String youtubeKey) {
@@ -81,6 +81,9 @@ public class DetailActivity extends YouTubeBaseActivity {
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d("DetailActivity","onInitilalizationSuccess");
                 youTubePlayer.cueVideo(youtubeKey);
+                if(rating>5.5){
+                    youTubePlayer.loadVideo(youtubeKey);
+                }
             }
 
             @Override
